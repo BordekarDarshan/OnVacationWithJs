@@ -18,13 +18,5 @@ function marry(man, woman) {
   };
 }
 
-let family = marry(
-  {
-    name: "John",
-  },
-  {
-    name: "Ann",
-  }
-);
-
-console.log(family);
+let certificate = marry({ husband: "John" }, { woman: "Ann" });
+console.log(certificate);
