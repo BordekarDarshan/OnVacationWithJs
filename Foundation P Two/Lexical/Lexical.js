@@ -1,4 +1,4 @@
-// Lexical is where you write the code.
+// Lexical is where you write the code. Where the code is defined.
 
 function one() {
   return two();
