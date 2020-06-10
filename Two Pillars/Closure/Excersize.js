@@ -43,3 +43,12 @@ for (var index = 0; index < array.length; index++) {
     });
   })(index);
 }
+
+function here(i) {
+  return function () {
+    console.log("I am at index " + i);
+  };
+}
+for (var index = 0; index < array.length; index++) {
+  setTimeout(here(index), 1000);
+}
