@@ -1,22 +1,19 @@
-function makeReusableAbdGeneric(name, weapon) {
-  return {
-    name,
-    weapon,
-  };
-}
-let centralize = {
-  attack() {
-    console.log(`${this.name} Attack With ${this.weapon}`);
+let methodStore = {
+  welcome() {
+    console.log(`Welocome ${this.personName} Your room is ${this.roomNo}`);
   },
 };
 
-let firstMan = makeReusableAbdGeneric("Darshan", "Needle");
-firstMan.attackBorrow = centralize.attack;
-firstMan.attackBorrow();
+function residentHotelFactory(personName, roomNo) {
+  return {
+    personName,
+    roomNo,
+  };
+}
 
-let secondMan = makeReusableAbdGeneric("Ani", "Jutsu");
-secondMan.attackBorrow = centralize.attack;
-secondMan.attackBorrow();
+let person = residentHotelFactory("Darshan", "901");
+person.welcomeMethod = methodStore.welcome;
+person.welcomeMethod();
 
 // properties name and weapons are okay but is there any way we can cetralize "attack()" function.
 // Yes
