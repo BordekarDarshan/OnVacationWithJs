@@ -61,3 +61,5 @@ addTax();
 itemsToPurchase();
 makeCartEmpty();
 paymentDone();
+
+console.log(user);
