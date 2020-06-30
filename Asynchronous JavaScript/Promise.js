@@ -7,6 +7,11 @@
 // rejected
 // pending
 
+// Promise is a part of the Web platform API defined by the standards bodies WHATWG and W3C. Not
+// JS.
+
+// .then() means returning a promise.
+
 const promiseOne = new Promise((res) => res("Heyy"));
 
 const promiseTwo = (data) => new Promise((res) => res(`${data} Brother`));

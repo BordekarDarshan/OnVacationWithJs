@@ -1,8 +1,9 @@
-const fetch = require("cross-fetch");
+const { default: fetch } = require("cross-fetch");
+
 const urls = [
   "https://jsonplaceholder.typicode.com/users",
   "https://jsonplaceholder.typicode.com/todos",
-  "https://jsonplacholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/posts",
 ];
 
 // Promise.all(
