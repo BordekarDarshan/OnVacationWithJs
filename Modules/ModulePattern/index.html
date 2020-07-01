@@ -26,6 +26,13 @@
     // .we have acces to "fightmodule" but not the variables and functions inside it.
     console.log(fightmodule);
   </script>
+  <!-- whenever you define import export you have to tell the broweser
+  that is it not the redular script anymore it is module. -->
+  <!-- also you will need server to serve these modules for that "live server" is better. -->
+  <script type="module">
+    import { fightWithEs } from "../ES6 Modules/ES6Modules.js";
+    console.log(fightWithEs("darshan", "Ani"));
+  </script>
 </html>
 <!-- With module pattern we make something available to outside world, we maintain encapsulation.
 
