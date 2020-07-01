@@ -70,8 +70,12 @@ let fightmodule = (function () {
 // order of <script></script> is one issue.
 // if we call the jquery script after supportScript, script won't work.
 
-// Common Js =>
+// Common Js => is synchronous, we need to use module bundles like browserify or wepack  which bundles the whole js files or script files. and make on file [bundle.js]
+// so you dont have worry about the in which order scripts are executing
+
 // AMD > asynchronous module defination. designed specifically for browsers.
 // AMD loads script or modules asynchronously, and that important for browsers. where code cant wait until a module has finished loading.
 
 // Solves 2 issues of module pattern
+
+// but still JS didn't have it's own native module support and for that ES6 modules came.
