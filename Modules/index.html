@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module</title>
+  </head>
+  <body>
+    <span style="font-size: x-large; font-weight: lighter;"
+      >Module Pattern</span
+    >
+  </body>
+  <script>
+    let globalName = "Darshan";
+  </script>
+  <script src="module.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    let supportScript = (function (globalName) {
+      $("span").click(function () {
+        $("span").hide();
+      });
+      //Remember Always return something otherwise it will give you undefined
+      return (globalName = 0);
+    })(globalName);
+    // .we have acces to "fightmodule" but not the variables and functions inside it.
+    console.log(fightmodule);
+  </script>
+</html>
+<!-- With module pattern we make something available to outside world, we maintain encapsulation.
+
+    watch 3.module pattern last 25 seconds. also "4"
+-->
