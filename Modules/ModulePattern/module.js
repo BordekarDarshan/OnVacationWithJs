@@ -69,3 +69,9 @@ let fightmodule = (function () {
 // Technically we are still polluting the global namespace [fightmodule variable]
 // order of <script></script> is one issue.
 // if we call the jquery script after supportScript, script won't work.
+
+// Common Js =>
+// AMD > asynchronous module defination. designed specifically for browsers.
+// AMD loads script or modules asynchronously, and that important for browsers. where code cant wait until a module has finished loading.
+
+// Solves 2 issues of module pattern
