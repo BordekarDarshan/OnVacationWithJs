@@ -6,17 +6,35 @@ function installmentSetUp(totalAmount, installmentBreakDown) {
   return part;
 }
 
-function payInstallment(installment, installmentNumber) {
+function payInstallment(installment, option) {
   let getEachInstallMent = installmentSetUp(10000, 4);
-  if (installmentNumber === 1) {
-    if (installment > getEachInstallMent[0]) {
-      let advance = installment - getEachInstallMent[0];
-      getEachInstallMent[0] = installment;
-      getEachInstallMent[0 + 1] = getEachInstallMent[0 + 1] - advance;
+  let installmentPaid = [];
 
-      return getEachInstallMent;
+  for (let i = 0; i < 4; i++) {
+    if (installment > getEachInstallMent[i]) {
+      let advance = installment - getEachInstallMent[i];
+      getEachInstallMent[i] = installment;
+      getEachInstallMent[i + 1] = getEachInstallMent[i + 1] - advance;
+      installmentPaid.concat(getEachInstallMent[i]);
+      return installmentPaid, getEachInstallMent;
+    }
+    if (installment < getEachInstallMent[i]) {
+      if (option === "adjust") {
+        let remain = getEachInstallMent[i] - installment;
+        getEachInstallMent[i] = installment;
+        getEachInstallMent[i + 1] = getEachInstallMent[i + 1] + remain;
+        installmentPaid.concat(getEachInstallMent[i]);
+        return getEachInstallMent;
+      }
+      if (option === "new") {
+        let remain = getEachInstallMent[i] - installment;
+        getEachInstallMent[i] = installment;
+        getEachInstallMent.push(remain);
+        installmentPaid.concat(getEachInstallMent[i]);
+        return getEachInstallMent;
+      }
     }
   }
 }
-let result = payInstallment(5000, 1);
+let result = payInstallment(000, "adjust");
 console.log(result);
